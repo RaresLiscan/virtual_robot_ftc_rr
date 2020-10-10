@@ -2,6 +2,7 @@ package virtual_robot.controller.robots.classes;
 
 import com.qualcomm.hardware.bosch.BNO055IMUImpl;
 import com.qualcomm.robotcore.hardware.*;
+import com.qualcomm.robotcore.hardware.configuration.MotorType;
 import javafx.fxml.FXML;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.transform.Rotate;
@@ -64,6 +65,7 @@ public class EncoderBot extends VirtualBot {
 
     public EncoderBot(){
         super();
+        hardwareMap.setActive(true);
         motors = new DcMotorExImpl[]{
                 (DcMotorExImpl)hardwareMap.get(DcMotorEx.class,"back_left_motor"),
                 (DcMotorExImpl)hardwareMap.get(DcMotorEx.class,"front_left_motor"),
@@ -99,6 +101,7 @@ public class EncoderBot extends VirtualBot {
                 {-0.25/ wlAverage, -0.25/ wlAverage, 0.25/ wlAverage, 0.25/ wlAverage},
                 {-0.25, 0.25, 0.25, -0.25}
         };
+        hardwareMap.setActive(false);
     }
 
     public void initialize(){
@@ -155,14 +158,11 @@ public class EncoderBot extends VirtualBot {
         y += dxR * sin + dyR * cos;
         headingRadians += headingChange;
 
-        //Need to account for possibility that robot has run in to the wall
-        if (x >  (halfFieldWidth - halfBotWidth)) x = halfFieldWidth - halfBotWidth;
-        else if (x < (halfBotWidth - halfFieldWidth)) x = halfBotWidth - halfFieldWidth;
-        if (y > (halfFieldWidth - halfBotWidth)) y = halfFieldWidth - halfBotWidth;
-        else if (y < (halfBotWidth - halfFieldWidth)) y = halfBotWidth - halfFieldWidth;
-
         if (headingRadians > Math.PI) headingRadians -= 2.0 * Math.PI;
         else if (headingRadians < -Math.PI) headingRadians += 2.0 * Math.PI;
+
+        //Need to account for possibility that robot has run in to the wall
+        constrainToBoundaries();
 
         imu.updateHeadingRadians(headingRadians);
 
