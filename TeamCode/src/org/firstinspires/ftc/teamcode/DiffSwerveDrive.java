@@ -1,12 +1,14 @@
 package org.firstinspires.ftc.teamcode;
 
 import android.graphics.PointF;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.util.Range;
 
+@Disabled
 public class DiffSwerveDrive {
 
     public static final double WHEEL_CIRCUMFERENCE = 4 * Math.PI;

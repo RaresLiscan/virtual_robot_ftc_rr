@@ -17,6 +17,7 @@ package org.firstinspires.ftc.teamcode.rr_quickstart_examples.drive.opmode;
 import com.acmerobotics.roadrunner.geometry.Pose2d;
 import com.acmerobotics.roadrunner.trajectory.Trajectory;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.teamcode.rr_quickstart_examples.drive.SampleMecanumDrive;
@@ -25,6 +26,7 @@ import org.firstinspires.ftc.teamcode.rr_quickstart_examples.drive.SampleMecanum
  * This is a simple routine to test translational drive capabilities.
  */
 //@Config
+@Disabled
 @Autonomous(name = "StraightTest", group = "drive")
 public class StraightTest extends LinearOpMode {
     public static double DISTANCE = 60; // in

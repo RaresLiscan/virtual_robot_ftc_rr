@@ -18,6 +18,7 @@ import com.acmerobotics.roadrunner.geometry.Vector2d;
 import com.acmerobotics.roadrunner.trajectory.Trajectory;
 import com.acmerobotics.roadrunner.trajectory.TrajectoryBuilder;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.teamcode.rr_quickstart_examples.drive.SampleMecanumDrive;
@@ -25,6 +26,7 @@ import org.firstinspires.ftc.teamcode.rr_quickstart_examples.drive.SampleMecanum
 /*
  * This is an example of a more complex path to really test the tuning.
  */
+//@Disabled
 @Autonomous(name = "SplineTest", group = "drive")
 public class SplineTest extends LinearOpMode {
     @Override

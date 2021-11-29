@@ -19,6 +19,7 @@ package org.firstinspires.ftc.teamcode.rr_quickstart_examples.drive.opmode;
 import com.acmerobotics.roadrunner.geometry.Pose2d;
 import com.acmerobotics.roadrunner.util.Angle;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.util.MovingStatistics;
 
@@ -36,6 +37,7 @@ import org.firstinspires.ftc.teamcode.rr_quickstart_examples.drive.SampleMecanum
  * accurate track width estimate is important or else the angular constraints will be thrown off.
  */
 //@Config
+@Disabled
 @Autonomous(name = "TrackWidthTuner", group = "drive")
 public class TrackWidthTuner extends LinearOpMode {
     public static double ANGLE = 180; // deg

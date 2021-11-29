@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.acmerobotics.roadrunner.path.QuinticSpline;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -9,7 +10,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
  * Example OpMode. Controls robot using left joystick, with arcade drive.
  */
 
-//@Disabled
+@Disabled
 @TeleOp(name = "two wheel arcade drive", group = "TwoWheel")
 public class TwoWheelArcadeDrive extends LinearOpMode {
 
